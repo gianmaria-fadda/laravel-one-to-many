@@ -37,7 +37,7 @@
 
                         <div class="mb-3">
                             <label for="title" class="form-label">Titolo <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="titolo" id="titolo" required minlength="3" maxlength="255" value="{{ old('title', $project->title) }}" placeholder="Inserisci qui il Titolo...">
+                            <input type="text" class="form-control" name="title" id="title" required minlength="3" maxlength="255" value="{{ old('title', $project->title) }}" placeholder="Inserisci qui il Titolo...">
                           </div>
 
                           <div class="mb-3">

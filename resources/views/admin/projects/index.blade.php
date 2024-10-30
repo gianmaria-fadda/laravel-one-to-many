@@ -30,16 +30,26 @@
                           <tr>
                             <th scope="col">#</th>
                             <th scope="col">Titolo</th>
+                            <th scope="col">Tipo</th>
                             <th scope="col">Contenuto</th>
+                            <th scope="col"></th>
                           </tr>
                         </thead>
                         <tbody>
                             @foreach ($projects as $project)
                                 <tr>
                                     <th scope="row">{{ $project->id }}</th>
-                                    <td>{{ $project->title }}</td>
-                                    <td>{{ $project->content }}</td>
-                                    <td>
+                                    <td class="text-center">{{ $project->title }}</td>
+                                    <td class="text-center">
+                                        @if (isset($project->type))
+                                            <a href="{{ route('admin.types.show', ['type' => $project->type_id]) }}"></a>
+                                                {{ $project->type->title }}
+                                        @else
+                                            -
+                                        @endif
+                                    </td>
+                                    <td class="text-center">{{ $project->content }}</td>
+                                    <td class="text-center">
                                         <a href="{{ route('admin.projects.show', ['project' => $project->id]) }}" class="btn btn-primary btn-sm">
                                             Vedi
                                         </a>
